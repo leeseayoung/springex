@@ -18,7 +18,7 @@
             , `createdAt`
             , `updatedAt`
  		From
- 			`uesd_goods`	
+ 			`used_goods`	
  	</select>
  
  
