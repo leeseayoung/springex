@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.penguin.spring.ex.jsp.repository.UserRepository">
+ 	
+ 	<insert id="insertUser" parameterType="map">
+ 		
+ 		INSERT INTO
+ 			`user`
+ 		(
+ 			`name`
+ 			, `yyyymmdd`
+ 			, `hobby`
+ 			, `email`
+ 		)
+ 		VALUE
+ 		(
+ 			#{name}
+ 			, #{yyyymmdd}
+ 			, #{hobby}
+ 			, #{email}
+ 		)
+ 	
+ 	</insert>
+ 
+ 
+ 	<select id="selectLastUser" 
+ 	resultType="com.penguin.spring.ex.jsp.domain.User">
+ 		SELECT
+ 			`id`
+ 			, `name`
+ 			, `yyyymmdd`
+ 			, `hobby`
+ 			, `introduce`
+ 			, `createdAt`
+ 			, `updateAt`
+ 		FROM
+ 			`user`
+ 		ORDER BY 
+ 			`id` DESC 
+ 		LIMIT 
+ 			1	
+ 	</select>
+ 
+ 
+ 
+ 
+ </mapper>
