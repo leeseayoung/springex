@@ -21,7 +21,7 @@ public class UserService {
 	}
 
 	public User getLastUser() {
-		
+			
 		User user = userRepository.selectLastUser();
 	
 		
