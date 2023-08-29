@@ -44,7 +44,29 @@
  			1	
  	</select>
  
- 
+ 	<insert id="insertUserByObject" parameterType="com.penguin.spring.ex.jsp.domain.User"
+ 	useGeneratedKeys="true" keyProperty="id">
+ 	
+ 	
+ 		INSERT INTO
+	 			`user`
+	 		(
+	 			`name`
+	 			, `yyyymmdd`
+	 			, `hobby`
+	 			, `email`
+	 		)
+ 		VALUE
+ 			(
+ 				#{name}
+ 				, #{yyyymmdd}
+ 				, #{hobby}
+ 				, #{email}
+ 			
+ 			)
+ 	
+ 	
+ 	</insert>
  
  
  </mapper>

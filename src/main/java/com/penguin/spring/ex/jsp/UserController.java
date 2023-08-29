@@ -20,16 +20,29 @@ public class UserController {
 	//이름, 생년월일, 이메일(취미), 전달 받고 사용자 정보 저장하는기능
 	//@RequestMapping("/jsp/user/create", method=RequestMethod.GET)
 	@GetMapping("/create")
-	@ResponseBody
+//	@ResponseBody
 	public String createUser(
 			@RequestParam("name") String name
 			, @RequestParam("yyyymmdd") String yyyymmdd
 			, @RequestParam("hobby")String hobby
-			, @RequestParam("email")String email) {
+			, @RequestParam("email")String email
+			, Model model) {
 		
-		int count = userService.addUser(name, yyyymmdd, hobby, email);
+		//int count = userService.addUser(name, yyyymmdd, hobby, email);
 		
-		return "수행 결과 : " + count; 
+		User user = new User();
+		user.setName(name);
+		user.setYyyymmdd(yyyymmdd);
+		user.setHobby(hobby);
+		user.setEmail(email);
+		
+		
+		int count = userService.addUserByObject(user);
+		
+		model.addAttribute("result", user);
+		
+		return "jsp/userInfo";
+		//return "수행 결과 : " + count; 
 	}
 	
 	@GetMapping("/input")
@@ -53,6 +66,18 @@ public class UserController {
 		
 		return "jsp/userInfo";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
