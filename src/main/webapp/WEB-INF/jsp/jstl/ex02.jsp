@@ -43,10 +43,29 @@
 		<h3>${fruit} :::::: ${status.count} ${status.index}  ${status.first}  ${status.last} </h3>
 	</c:forEach>
 	
-	<%-- 연습문제 테이블 캐그로 만들으셈 --%>
+	<%-- 연습문제 테이블 태그로 만들으셈 --%>
 	
-	
-	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>나이</th>
+				<th>취미</th>
+			</tr>
+		</thead>
+				
+		<tbody>
+		<%-- for(Map<String, object> user:userList ) {} --%>
+		<c:forEach var="user" items="${userList}" varStatus="status" >
+		<tr>
+			<td>${user.get("name")}</td>
+			<td>${user.age}</td>
+			<td>${user.hobby}</td>
+		</tr>
+		</c:forEach>
+		
+		</tbody>
+	</table>
 	
 	
 </body>
