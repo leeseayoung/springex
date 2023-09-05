@@ -1,5 +1,7 @@
 package com.penguin.spring.ex.jsp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,16 @@ public class UserService {
 	}
 
 	
+	public int addUser1(String name, String yyyymmdd, String hobby, String email) {
+		
+		int count = userRepository.insertUser(name, yyyymmdd, hobby, email);
+		
+		return count;
+		
+	}
+	
+	
+	
 	public int addUserByObject(User user) {
 		
 		int count = userRepository.insertUserByObject(user);
@@ -37,6 +49,16 @@ public class UserService {
 		
 		return user;
 	}
+	
+	
+	public List<User> getUserList() {
+		
+		List<User> userList = userRepository.selectUserList();
+		
+		return userList;
+		
+	}
+	
 	
 	
 }

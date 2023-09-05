@@ -69,4 +69,21 @@
  	</insert>
  
  
+ 	<select id="selectUserList" 
+ 	resultType="com.penguin.spring.ex.jsp.domain.User">
+ 	 		SELECT
+ 			`id`
+ 			, `name`
+ 			, `yyyymmdd`
+ 			, `hobby`
+ 			, `introduce`
+ 			, `createdAt`
+ 			, `updateAt`
+ 			, `email`
+ 		FROM
+ 			`user`
+ 	
+ 	</select>
+ 
+ 
  </mapper>
