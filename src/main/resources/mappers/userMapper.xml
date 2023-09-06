@@ -71,7 +71,7 @@
  
  	<select id="selectUserList" 
  	resultType="com.penguin.spring.ex.jsp.domain.User">
- 	 	SELECT
+ 	 		SELECT
  			`id`
  			, `name`
  			, `yyyymmdd`

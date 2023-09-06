@@ -35,7 +35,6 @@ public class NewUserController {
 	}
 	
 	
-	
 	@ResponseBody
 	@GetMapping("/create")
 	public Map<String, String> createUser(
