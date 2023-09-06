@@ -14,6 +14,7 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	
 	public int addUser(String name, String yyyymmdd, String hobby, String email) {
 		
 		int count = userRepository.insertUser(name, yyyymmdd, hobby, email);
@@ -23,13 +24,6 @@ public class UserService {
 	}
 
 	
-	public int addUser1(String name, String yyyymmdd, String hobby, String email) {
-		
-		int count = userRepository.insertUser(name, yyyymmdd, hobby, email);
-		
-		return count;
-		
-	}
 	
 	
 	
