@@ -86,4 +86,21 @@
  	</select>
  
  
+ 	<!-- 9월6일 수업 -->
+ 
+	 <select id="selectCountEmail" parameterType="string"
+	 resultType="int">
+	 	SELECT
+	 		 count(1)
+	 	 FROM
+	 		`user`
+	 	WHERE		
+	 		`email` = #(email)
+	 
+	 
+	 
+	 </select>
+ 
+ 
+ 
  </mapper>
